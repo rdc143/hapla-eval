@@ -1,0 +1,48 @@
+time_units: generations
+generation_time: 1
+demes:
+- name: ANC
+  description: Ancestral equilibrium
+  epochs:
+  - {end_time: 5920, start_size: 7310}
+- name: AMH
+  description: Anatomically modern humans
+  ancestors: [ANC]
+  epochs:
+  - {end_time: 2040, start_size: 14474}
+- name: AFR
+  description: African
+  ancestors: [AMH]
+  epochs:
+  - {end_time: 0, start_size: 14474}
+- name: OOA
+  description: Bottleneck out-of-Africa
+  ancestors: [AMH]
+  epochs:
+  - {end_time: 920, start_size: 1861}
+- name: EUR
+  description: European
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 0, start_size: 1032.0085233345426, end_size: 34039}
+- name: EAS
+  description: East Asian
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 0, start_size: 554.0052134346703, end_size: 45852}
+- name: ADMIX
+  description: Admixed America
+  start_time: 12
+  ancestors: [AFR, EUR, EAS]
+  proportions: [0.16666666666666666, 0.3333333333333333, 0.5]
+  epochs:
+  - {end_time: 0, start_size: 30000.23927544386, end_size: 54664}
+migrations:
+- demes: [AFR, OOA]
+  rate: 0.00015
+- demes: [AFR, EUR]
+  rate: 2.5e-05
+- demes: [AFR, EAS]
+  rate: 7.8e-06
+- demes: [EUR, EAS]
+  rate: 3.11e-05
